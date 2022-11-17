@@ -1,0 +1,210 @@
+:root {
+  --color-dark: #1a1a1a;
+  --color-light: #fff;
+  --color-gray: #a2a3a8;
+  --color-gray-dark: #66676e;
+  --color-contrast: rgb(99, 49, 224);
+  --color-error: #eb0037;
+  --font-family: "Helvetica", sans-serif;
+  --shadow: inset 0 0 0 1px var(--color-dark);
+  --shadow-big: inset 0 0 0 2px var(--color-dark);
+}
+
+.color-contrast {
+  color: var(--color-contrast);
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-dark);
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+  padding: 0 20px;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: var(--color-contrast);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/*  Styling of the btn  */
+
+.btn {
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  border-style: none;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  width: 100%;
+  font-size: 1rem;
+  letter-spacing: -0.16px;
+  line-height: 1.5rem;
+  font-weight: 700;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--color-gray-dark);
+}
+
+/*  Styling of the form inputs  */
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__group:focus-within label {
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+.form__group:focus-within .form__group__input {
+  box-shadow: var(--shadow-big);
+}
+
+.form__group label {
+  background-color: var(--color-light);
+  padding: 4px 8px;
+  color: var(--color-dark);
+  border-color: var(--color-dark);
+  border-style: solid;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-top-width: 1px;
+  border-bottom-width: 0;
+  max-width: fit-content;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1rem;
+}
+
+.form__group__input {
+  position: relative;
+  text-rendering: optimizeLegibility;
+  display: flex;
+  background-color: var(--color-light);
+  padding: 2px;
+  box-shadow: var(--shadow);
+}
+
+.form__group__input input {
+  outline: none;
+  width: 100%;
+  border-radius: 0;
+  border-width: 0;
+  border-style: none;
+  color: var(--color-dark);
+  background-color: transparent;
+  font-size: 1rem;
+  letter-spacing: -0.16px;
+  line-height: 1.5rem;
+  padding: 10px 12px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.form__group__input input::-webkit-input-placeholder {
+  color: var(--color-gray);
+  font-size: 1rem;
+  letter-spacing: -0.16px;
+}
+
+.form__group__input__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.form__group__input__icon--left {
+  padding: 8px 0 8px 12px;
+}
+
+.form__group__input__icon--right {
+  padding: 8px 12px 8px 0;
+}
+
+.form__group__input__icon svg {
+  height: 1em;
+  width: 1em;
+  transform: scale(1);
+  overflow: hidden;
+  font-size: 1.5rem;
+  color: var(--color-dark);
+}
+
+/*  Styling of the form errors  */
+
+.form__group--error label {
+  color: var(--color-light);
+  background-color: var(--color-error);
+  border: none;
+}
+
+.form__group--error .form__group__input {
+  box-shadow: inset 0 0 0 2px var(--color-error);
+}
+
+.form__input__error {
+  color: var(--color-error);
+  font-size: 0.85rem;
+  display: flex;
+  gap: 5px;
+  letter-spacing: 0;
+  line-height: 1rem;
+  margin: 3px 0;
+  opacity: 0;
+}
+
+.form__input__error svg {
+  height: 1em;
+  transform: scale(1);
+  width: 1em;
+}
+
+.form__input__error.show {
+  opacity: 1;
+}
