@@ -94,6 +94,7 @@ a {
 .form__group {
   display: flex;
   flex-direction: column;
+  margin: 10px 0;
 }
 
 .form__group:focus-within label {
@@ -195,14 +196,14 @@ a {
   gap: 5px;
   letter-spacing: 0;
   line-height: 1rem;
-  margin: 3px 0;
+  margin: 5px 0;
   opacity: 0;
 }
 
 .form__input__error svg {
-  height: 1em;
+  min-height: 1em;
   transform: scale(1);
-  width: 1em;
+  min-width: 1em;
 }
 
 .form__input__error.show {
